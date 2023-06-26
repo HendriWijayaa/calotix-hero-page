@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calotix | Pesan Tiket Mu Dengan Mudah</title>
+    <link
+      href="assets/logo/calotix-wave-logo.svg"
+      rel="shortcut icon"
+      type="image/png"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="navbar-logo">
+        <img
+          class="navbar-logo"
+          src="assets/logo/calotix-wave-logo.svg"
+          alt=""
+        />
+        <p>Calotix</p>
+      </div>
+      <ul class="navbar-list">
+        <li><a href=""></a>Home</li>
+        <li><a href=""></a>Event</li>
+        <li><a href=""></a>Order</li>
+      </ul>
+    </nav>
+    <main class="main-hero">
+      <div class="cover">
+        <h1>Nikmati Acara Mu Tanpa <span class="change-text">Ribet</span></h1>
+      </div>
+    </main>
+    <script>
+      var images = [
+        "url(../assets/img/background-00.jpg)",
+        "url(../assets/img/background-01.jpg)",
+        "url(../assets/img/background-03.jpg)",
+      ];
+      var currentIndex = 0;
+      var mainHeroElement = document.querySelector(".main-hero");
+
+      setInterval(function () {
+        currentIndex = (currentIndex + 1) % images.length;
+        mainHeroElement.style.backgroundImage = images[currentIndex];
+      }, 4000);
+
+      setInterval(function () {
+        var spanElement = document.querySelector(".change-text");
+        var currentText = spanElement.textContent;
+
+        if (currentText === "Ribet") {
+          spanElement.textContent = "Pusing";
+        } else if (currentText === "Pusing") {
+          spanElement.textContent = "Antri";
+        } else if (currentText === "Antri") {
+          spanElement.textContent = "Ribet";
+        }
+      }, 3000);
+    </script>
+  </body>
+</html>
